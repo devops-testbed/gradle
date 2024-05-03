@@ -1,0 +1,13 @@
+name: 'Repo Folder Composite Action'
+runs:
+  using: "composite"
+  steps:
+    - run: echo " in folder action "
+      shell: bash  
+      
+    - name: Generate list using Markdown
+      run: |
+        echo "## Folder Action Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
+        echo "- $(date)" >> $GITHUB_STEP_SUMMARY  
+      shell: bash
